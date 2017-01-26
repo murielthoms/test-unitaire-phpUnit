@@ -19,7 +19,13 @@ class RoverTest extends TestCase {
 		$this->assertEquals($rover->getY(), 0);
 
 	}
-
+	public function testRoverToMoveSouth(){
+		$rover = new Rover(1,1,'s');
+		$rover->forward();
+		$this->assertEquals($rover->getDirection(),'s');
+		$this->assertEquals($rover->getX(),1);
+		$this->assertEquals($rover->getY(),2);
+	}
 
 
 
