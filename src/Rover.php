@@ -3,7 +3,7 @@ class Rover{
 	private $x;
 	private $y;
 	private $direction;
-	
+
 	public function __construct($horizontal, $vertical, $direction){
 		$this->x = $horizontal;
 		$this->y = $vertical;
@@ -16,11 +16,16 @@ class Rover{
 	}
 	
 	public function getY(){
-		$this->y;
+		return $this->y;
 	}
 	
 	public function getDirection(){
-		$this->direction;
+		return $this->direction;
+	}
+	public function forward(){
+		// $this->x = $this->x + 1;
+		
+
 	}
 	
 
