@@ -29,7 +29,7 @@ class Rover{
 			$this->y= ($this->y)+ 1;
 		}else if($this->direction==='e'){
 			$this->x=($this->x)+1;
-		}else if($this->direction==='o'){
+		}else if($this->direction==='w'){
 			$this->x=($this->x)-1;
 		}
 	}
