@@ -23,12 +23,17 @@ class Rover{
 		return $this->direction;
 	}
 	public function forward(){
-		// $this->x = $this->x + 1;
-		
-
+		if($this->direction === 'n'){
+			$this->y = ($this->y)-1;
+		}else if($this->direction === 's'){
+			$this->y= ($this->y)+ 1;
+		}else if($this->direction==='e'){
+			$this->x=($this->x)+1;
+		}else if($this->direction==='o'){
+			$this->x=($this->x)-1;
+		}
 	}
 	
-
 }
 
 ?>

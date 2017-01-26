@@ -15,8 +15,8 @@ class RoverTest extends TestCase {
 		$rover = new Rover(1,1,'n');
 		$rover->forward();
 		$this->assertEquals($rover->getDirection(), 'n');
-		$this->assertEquals($rover->getX(), +1);
-		$this->assertEquals($rover->getY(), 1);
+		$this->assertEquals($rover->getX(), 1);
+		$this->assertEquals($rover->getY(), 0);
 
 	}
 
