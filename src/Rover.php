@@ -4,14 +4,15 @@ class Rover{
 	private $y;
 	private $direction;
 	private $tabCoor = ['n','e','s','w'];
+	private $coorX = [0, 1 ,0 ,-1];
+	private $coorY = [-1,0,1,0];
+
 
 	public function __construct($horizontal, $vertical, $direction){
 		$this->x = $horizontal;
 		$this->y = $vertical;
 		$this->direction= $direction;
-
 	}
-
 	public function getX(){
 		return $this->x;
 	}
@@ -23,39 +24,25 @@ class Rover{
 	public function getDirection(){
 		return $this->direction;
 	}
+
 	public function forward(){
-		if($this->direction === 'n'){
-			$this->y = ($this->y)-1;
-		}else if($this->direction === 's'){
-			$this->y= ($this->y)+ 1;
-		}else if($this->direction==='e'){
-			$this->x=($this->x)+1;
-		}else if($this->direction==='w'){
-			$this->x=($this->x)-1;
-		}
+		$index = array_search($this->direction, $this->tabCoor);
+		$this->x = ($this->x)+($this->coorX[$index]);
+		$this->y = ($this->y)+($this->coorY[$index]);
 	}
-	public function backward(){
-		if($this->direction === 'n'){
-			$this->y = ($this->y)+1;
-		}else if($this->direction === 's'){
-			$this->y= ($this->y)-1;
-		}else if($this->direction === 'e'){
-			$this->x = ($this->x) -1;	
-		}else if($this->direction === 'w'){
-			$this->x =($this->x)+1;
-		}
-	}
+	// public function backward(){
+	// 	$index = array_search($this->direction, $this->tabCoor);
+	// 	$this->x = ($this->x)+($this->coorX[$index]);
+	// 	$this->y = ($this->y)+($this->coorY[$index]);
+	// }
 
 	public function left(){
-		if($this->direction === 'n'){
-			$this->direction='w';
-		}else if($this->direction ==='w'){
-			$this->direction = 's';
-		}else if($this->direction === 's'){
-			$this->direction = 'e';
-		}else if($this->direction === 'e'){
-			$this->direction='n';
+		$index = array_search($this->direction, $this->tabCoor);
+		$index--;
+		if($index < 0){
+			$index = 3;
 		}
+		$this->direction = $this->tabCoor[$index];
 	}
 	
 	public function right(){
@@ -65,6 +52,7 @@ class Rover{
 			$index = 0;	
 		}
 		$this->direction = $this->tabCoor[$index];
-	}
+	}	
+
 }
 ?>
