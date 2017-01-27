@@ -95,4 +95,10 @@ class RoverTest extends TestCase {
 		$rover->moveSidewaysLeft();
 		$this->assertEquals($rover->getDirection(),'n');		
 	}
+
+	public function testRoverMoveRightFacingNorth(){
+		$rover = new Rover(1,1, 'n');
+		$rover->moveSidewaysRight();
+		$this->assertEquals($rover->getDirection(),'e');
+	}
 }
