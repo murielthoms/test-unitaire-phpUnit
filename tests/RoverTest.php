@@ -11,7 +11,7 @@ class RoverTest extends TestCase {
 		$this->assertEquals($rover->getDirection(),'s');
 	}
 
-	public function testRoverForwardNorth(){
+	public function testRoverForwardFacingNorth(){
 		$rover = new Rover(1,1,'n');
 		$rover->forward();
 		$this->assertEquals($rover->getDirection(), 'n');
@@ -19,14 +19,14 @@ class RoverTest extends TestCase {
 		$this->assertEquals($rover->getY(), 0);
 
 	}
-	public function testRoverForwardSouth(){
+	public function testRoverForwardFacingSouth(){
 		$rover = new Rover(1,1,'s');
 		$rover->forward();
 		$this->assertEquals($rover->getDirection(),'s');
 		$this->assertEquals($rover->getX(),1);
 		$this->assertEquals($rover->getY(),2);
 	}
-	public function testRoverForwardEast(){
+	public function testRoverForwardFacingEast(){
 		$rover = new Rover (3,5,'e');
 		$rover->forward();
 		$this->assertEquals($rover->getDirection(),'e');
@@ -35,14 +35,14 @@ class RoverTest extends TestCase {
 
 	}
 
-	public function testRoverToMoveWest(){
+	public function testRoverForwardFacingWest(){
 		$rover = new Rover (1, 1, 'w');
 		$rover->forward();
 		$this->assertEquals($rover->getDirection(), 'w');
 		$this->assertEquals($rover->getX(),0);
 		$this->assertEquals($rover->getY(), 1);
 	}
-	public function testRoverBackWardSouth(){
+	public function testRoverBackWardFacingSouth(){
 		$rover = new Rover(1, 1, 's');
 		$rover->backward();
 		$this->assertEquals($rover->getDirection(),'s');
@@ -50,7 +50,7 @@ class RoverTest extends TestCase {
 		$this->assertEquals($rover->getY(),0);
 	}
 
-	public function testRoverBackwardNorth(){
+	public function testRoverBackwardFacingNorth(){
 		$rover = new Rover (1, 1, 'n');
 		$rover->backward();
 		$this->assertEquals($rover->getDirection(),'n');
@@ -58,7 +58,7 @@ class RoverTest extends TestCase {
 		$this->assertEquals($rover->getY(),2);
 
 	}
-	public function testRoverBackwardEast(){
+	public function testRoverBackwardFacingEast(){
 		$rover = new Rover (1, 1, 'e');
 		$rover->backward();
 		$this->assertEquals($rover->getDirection(),'e');
@@ -66,7 +66,7 @@ class RoverTest extends TestCase {
 		$this->assertEquals($rover->getY(),1);
 
 	}
-	public function testRoverBackwardWest(){
+	public function testRoverBackwardFacingWest(){
 		$rover = new Rover (1, 1, 'w');
 		$rover->backward();
 		$this->assertEquals($rover->getDirection(),'w');
@@ -74,50 +74,47 @@ class RoverTest extends TestCase {
 		$this->assertEquals($rover->getY(), 1);
 
 	}
-	public function testRoverMoveLeftFacingNorth(){
+	public function testRoverTurnLeftFacingNorth(){
 		$rover = new Rover (1, 1, 'n');
-		$rover->moveSidewaysLeft();
-		$this->assertEquals($rover->getDirection(),'w');
-		
+		$rover->left();
+		$this->assertEquals($rover->getDirection(),'w');		
 	}
 	public function testRoverMoveLeftFacingWest(){
 		$rover = new Rover (1, 1, 'w');
-		$rover->moveSidewaysLeft();
+		$rover->left();
 		$this->assertEquals($rover->getDirection(),'s');		
 	}
 	public function testRoverMoveLeftFacingSouth(){
 		$rover = new Rover (1, 1, 's');
-		$rover->moveSidewaysLeft();
+		$rover->left();
 		$this->assertEquals($rover->getDirection(),'e');		
 	}
 	public function testRoverMoveLeftFacingEast(){
 		$rover = new Rover (1, 1, 'e');
-		$rover->moveSidewaysLeft();
+		$rover->left();
 		$this->assertEquals($rover->getDirection(),'n');		
 	}
 
 	public function testRoverMoveRightFacingNorth(){
 		$rover = new Rover(1,1, 'n');
-		$rover->moveSidewaysRight();
+		$rover->right();
 		$this->assertEquals($rover->getDirection(),'e');
 	}
 
 	public function testRoverMoveRightFacingEast(){
 		$rover = new Rover(1,1, 'e');
-		$rover->moveSidewaysRight();
+		$rover->right();
 		$this->assertEquals($rover->getDirection(),'s');
 	}
 	public function testRoverMoveRightFacingSouth(){
 		$rover = new Rover(1,1, 's');
-		$rover->moveSidewaysRight();
+		$rover->right();
 		$this->assertEquals($rover->getDirection(),'w');
 	}
 	public function testRoverMoveRightFacingWest(){
 		$rover = new Rover(1,1, 'w');
-		$rover->moveSidewaysRight();
+		$rover->right();
 		$this->assertEquals($rover->getDirection(),'n');
 	}
-	
-
 
 }

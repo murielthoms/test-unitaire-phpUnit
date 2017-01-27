@@ -45,7 +45,7 @@ class Rover{
 		}
 	}
 
-	public function moveSidewaysLeft(){
+	public function left(){
 		if($this->direction === 'n'){
 			$this->direction='w';
 		}else if($this->direction ==='w'){
@@ -57,7 +57,7 @@ class Rover{
 		}
 	}
 
-	public function moveSidewaysRight(){
+	public function right(){
 		if($this->direction === 'n'){
 			$this->direction='e';
 		}else if($this->direction ==='e'){
