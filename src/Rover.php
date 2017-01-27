@@ -43,10 +43,12 @@ class Rover{
 		}else if($this->direction === 'w'){
 			$this->x =($this->x)+1;
 		}
-
-
 	}
-	
-}
 
+	public function moveSidewaysLeft(){
+		if($this->direction === 'n'){
+			$this->direction='w';
+		}
+	}
+}
 ?>

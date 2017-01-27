@@ -74,4 +74,10 @@ class RoverTest extends TestCase {
 		$this->assertEquals($rover->getY(), 1);
 
 	}
+	public function testRoverMoveLeft(){
+		$rover = new Rover (1, 1, 'n');
+		$rover->moveSidewaysLeft();
+		$this->assertEquals($rover->getDirection(),'w');
+		
+	}
 }
