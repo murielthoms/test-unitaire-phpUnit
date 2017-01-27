@@ -117,7 +117,7 @@ class RoverTest extends TestCase {
 		$rover->moveSidewaysRight();
 		$this->assertEquals($rover->getDirection(),'n');
 	}
-
+	
 
 
 }
