@@ -48,6 +48,12 @@ class Rover{
 	public function moveSidewaysLeft(){
 		if($this->direction === 'n'){
 			$this->direction='w';
+		}else if($this->direction ==='w'){
+			$this->direction = 's';
+		}else if($this->direction === 's'){
+			$this->direction = 'e';
+		}else if($this->direction === 'e'){
+			$this->direction='n';
 		}
 	}
 }
