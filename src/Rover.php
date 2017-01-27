@@ -3,6 +3,7 @@ class Rover{
 	private $x;
 	private $y;
 	private $direction;
+	private $tabCoor = ['n','e','s','w'];
 
 	public function __construct($horizontal, $vertical, $direction){
 		$this->x = $horizontal;
@@ -56,17 +57,14 @@ class Rover{
 			$this->direction='n';
 		}
 	}
-
+	
 	public function right(){
-		if($this->direction === 'n'){
-			$this->direction='e';
-		}else if($this->direction ==='e'){
-			$this->direction = 's';
-		}else if($this->direction === 's'){
-			$this->direction = 'w';
-		}else if($this->direction === 'w'){
-			$this->direction='n';
+		$index = array_search($this->direction,$this->tabCoor);
+		$index++;
+		if( $index > 3){
+			$index = 0;	
 		}
+		$this->direction = $this->tabCoor[$index];
 	}
 }
 ?>
