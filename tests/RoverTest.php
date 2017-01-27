@@ -11,7 +11,7 @@ class RoverTest extends TestCase {
 		$this->assertEquals($rover->getDirection(),'s');
 	}
 
-	public function testRoverToMoveNorth(){
+	public function testRoverForwardNorth(){
 		$rover = new Rover(1,1,'n');
 		$rover->forward();
 		$this->assertEquals($rover->getDirection(), 'n');
@@ -19,14 +19,14 @@ class RoverTest extends TestCase {
 		$this->assertEquals($rover->getY(), 0);
 
 	}
-	public function testRoverToMoveSouth(){
+	public function testRoverForwardSouth(){
 		$rover = new Rover(1,1,'s');
 		$rover->forward();
 		$this->assertEquals($rover->getDirection(),'s');
 		$this->assertEquals($rover->getX(),1);
 		$this->assertEquals($rover->getY(),2);
 	}
-	public function testRoverToMoveEast(){
+	public function testRoverForwardEast(){
 		$rover = new Rover (3,5,'e');
 		$rover->forward();
 		$this->assertEquals($rover->getDirection(),'e');
@@ -42,7 +42,22 @@ class RoverTest extends TestCase {
 		$this->assertEquals($rover->getX(),0);
 		$this->assertEquals($rover->getY(), 1);
 	}
+	public function testRoverBackWardSouth(){
+		$rover = new Rover(1, 1, 's');
+		$rover->backward();
+		$this->assertEquals($rover->getDirection(),'s');
+		$this->assertEquals($rover->getX(),1);
+		$this->assertEquals($rover->getY(),0);
+	}
 
+	public function testRoverBackwardNorth(){
+		$rover = new Rover (1, 1, 'n');
+		$rover->backward();
+		$this->assertEquals($rover->getDirection(),'n');
+		$this->assertEquals($rover->getX(),1);
+		$this->assertEquals($rover->getY(),2);
+
+	}
 
 
 }

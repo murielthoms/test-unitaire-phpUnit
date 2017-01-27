@@ -33,6 +33,19 @@ class Rover{
 			$this->x=($this->x)-1;
 		}
 	}
+	public function backward(){
+		if($this->direction === 'n'){
+			$this->y = ($this->y)+1;
+		}else if($this->direction === 's'){
+			$this->y= ($this->y)-1;
+		}else if($this->direction === 'e'){
+			$this->x = ($this->x) -1;	
+		}else if($this->direction === 'w'){
+			$this->x =($this->x)+1;
+		}
+
+
+	}
 	
 }
 
